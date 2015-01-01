@@ -18,6 +18,7 @@ public class TurretScript : MonoBehaviour {
 
 	void Update() 
 	{
+		//counter used to dictate the fire rate
 		if(fireRate > 0)
 		{
 			fireRate -= 1;

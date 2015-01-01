@@ -20,8 +20,8 @@ public class EnemySpawnScript : MonoBehaviour {
 	}
 
 	void Spawn ()
-	//spawns the enemy at the position of this gameobject
 	{
+		//spawns the enemy at the position of this gameobject
 		Instantiate (enemy, this.transform.position, this.transform.rotation);
 	}
 }

@@ -9,9 +9,12 @@ public class EnemyScript : MonoBehaviour {
 	//transforms
 	public Transform factory;
 
+	//
+	public GameControlScript gameControlScript;
+
 	//floats
 	public float health;
-	public float scoreValue;
+	public float pointValue;
 	public float speed;
 	public float chooseFactory;
 
@@ -26,7 +29,7 @@ public class EnemyScript : MonoBehaviour {
 		//using the random number the enemy chooses a factory to move towards
 		if (chooseFactory == 1) 
 		{
-			factory = GameObject.FindGameObjectWithTag("Target1").transform;
+			factory = GameObject.FindGameObjectWithTag("Factory").transform;
 		}
 	}
 
@@ -38,9 +41,11 @@ public class EnemyScript : MonoBehaviour {
 		//the speed float is used for the navmeshagent speed
 		agent.speed = speed;
 
-		//the enemy is destroyed if its health reaches below 1
+		//the enemy is destroyed if its health reaches below 1, and the points are added to the GameControl object
 		if (health < 1)
 		{
+			gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
+			gameControlScript.points += pointValue;
 			Destroy(this.gameObject);
 		}
 	}
