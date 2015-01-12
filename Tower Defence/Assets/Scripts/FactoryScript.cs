@@ -5,14 +5,6 @@ public class FactoryScript : MonoBehaviour {
 
 	//floats
 	public float lives;
-	
-	void Start () {
-	
-	}
-
-	void Update () {
-	
-	}
 
 	void OnTriggerEnter(Collider obj)
 	{

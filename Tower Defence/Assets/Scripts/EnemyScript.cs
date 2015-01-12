@@ -16,21 +16,21 @@ public class EnemyScript : MonoBehaviour {
 	public float health;
 	public float pointValue;
 	public float speed;
-	public float chooseFactory;
 
 	void Start ()
 	{
+		//find the gamecontrol object and the gamecontrolscript
+		gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
+
 		//the agent is the gameobjects navmeshagent
 		agent = GetComponent<NavMeshAgent>();
 
-		//generates a random number, used to choose a factory for the enemy to move towards
-		chooseFactory = Random.Range (1,1);
+		//finds the target that the enemy will move towards
+		factory = GameObject.FindGameObjectWithTag("Factory").transform;
 
-		//using the random number the enemy chooses a factory to move towards
-		if (chooseFactory == 1) 
-		{
-			factory = GameObject.FindGameObjectWithTag("Factory").transform;
-		}
+		health = health * gameControlScript.currentWave;
+
+		speed = speed * gameControlScript.currentWave;
 	}
 
 	void Update () 
@@ -44,7 +44,7 @@ public class EnemyScript : MonoBehaviour {
 		//the enemy is destroyed if its health reaches below 1, and the points are added to the GameControl object
 		if (health < 1)
 		{
-			gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
+
 			gameControlScript.points += pointValue;
 			Destroy(this.gameObject);
 		}

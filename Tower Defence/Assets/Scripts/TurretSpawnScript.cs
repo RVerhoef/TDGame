@@ -16,10 +16,10 @@ public class TurretSpawnScript : MonoBehaviour {
 		buyButton = GameObject.FindGameObjectWithTag("BuyButton");
 	}
 
-	//
+	//when the mouse is on this object and clicked, it is assigned as the spawnpoint for buybuttons
 	void OnMouseOver () 
 	{
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) && gameObject.tag == "SpawnPoint")
 		{
 			buyButtonScript.spawnPoint = gameObject;
 		}

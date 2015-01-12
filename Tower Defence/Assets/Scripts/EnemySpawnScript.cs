@@ -15,7 +15,7 @@ public class EnemySpawnScript : MonoBehaviour {
 
 	void Start () 
 	{
-		//
+		//finds the gamecontrol object and the gamecontrolscript
 		gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
 
 		//an enemy is spawned as soon as the startTime is over, and keep spawning every time the repeatTime is over
