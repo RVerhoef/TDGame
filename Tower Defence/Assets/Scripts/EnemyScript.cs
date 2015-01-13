@@ -28,8 +28,10 @@ public class EnemyScript : MonoBehaviour {
 		//finds the target that the enemy will move towards
 		factory = GameObject.FindGameObjectWithTag("Factory").transform;
 
+		//
 		health = health * gameControlScript.currentWave;
 
+		//
 		speed = speed * gameControlScript.currentWave;
 	}
 

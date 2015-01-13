@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TurretScript : MonoBehaviour {
 
+	//audio
+	public AudioClip shoot;
+
 	//transforms
 	public Transform target;
 	public Transform bulletPos;
@@ -13,7 +16,11 @@ public class TurretScript : MonoBehaviour {
 	//floats
 	public float rotateSpeed;
 	public float fireRate;
-	public float reload;
+
+	void Start()
+	{
+		InvokeRepeating ("Shoot", fireRate, fireRate);
+	}
 
 	void OnTriggerStay(Collider obj)
 	{
@@ -41,15 +48,14 @@ public class TurretScript : MonoBehaviour {
 		float step = rotateSpeed * Time.deltaTime;
 		Vector3 newPos = Vector3.RotateTowards(transform.forward, targetPos, step, 0.0F);
 		transform.rotation = Quaternion.LookRotation(newPos);
-		Invoke ("Shoot", fireRate);
 	}
 
 	void Shoot ()
 	{
-		if(Time.time >= reload + 1)
+		if(target.tag == "Enemy")
 		{
 		Instantiate(bullet, bulletPos.position, bulletPos.rotation);
-		reload = Time.time;
+		audio.PlayOneShot(shoot);
 		}
 	}
 }

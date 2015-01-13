@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class GameControlScript : MonoBehaviour {
-
+	
 	//scripts
 	public FactoryScript factoryScript;
 
@@ -12,6 +12,7 @@ public class GameControlScript : MonoBehaviour {
 
 	//bools
 	public bool spawningAllowed;
+	public bool pointSelected;
 
 	//floats
 	public float points;
