@@ -4,7 +4,9 @@ using System.Collections;
 public class EnemySpawnScript : MonoBehaviour {
 
 	//gameobjects
-	public GameObject enemy;
+	public GameObject enemy1;
+	public GameObject enemy2;
+	public GameObject enemy3;
 
 	//scripts
 	public GameControlScript gameControlScript;
@@ -19,7 +21,8 @@ public class EnemySpawnScript : MonoBehaviour {
 		gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
 
 		//an enemy is spawned as soon as the startTime is over, and keep spawning every time the repeatTime is over
-			InvokeRepeating ("Spawn", startTime, repeatTime);
+		InvokeRepeating ("Spawn", startTime, repeatTime);
+
 	}
 
 	void Spawn ()
@@ -27,8 +30,21 @@ public class EnemySpawnScript : MonoBehaviour {
 		//spawns the enemy at the position of this gameobject if spawning is allowed
 		if (gameControlScript.spawningAllowed == true && gameControlScript.totalMaxSpawns > 0) 
 		{
-			Instantiate (enemy, this.transform.position, this.transform.rotation);
-			gameControlScript.totalMaxSpawns -= 1;
+			if(gameControlScript.spawnEnemy == 0)
+			{
+				Instantiate (enemy1, this.transform.position, this.transform.rotation);
+				gameControlScript.totalMaxSpawns -= 1;
+			}
+			else if(gameControlScript.spawnEnemy == 1)
+			{
+				Instantiate (enemy2, this.transform.position, this.transform.rotation);
+				gameControlScript.totalMaxSpawns -= 1;
+			}
+			else if(gameControlScript.spawnEnemy == 2)
+			{
+				Instantiate (enemy3, this.transform.position, this.transform.rotation);
+				gameControlScript.totalMaxSpawns -= 1;
+			}
 		}
 	}
 }

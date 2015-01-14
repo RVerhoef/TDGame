@@ -10,6 +10,7 @@ public class TurretSpawnScript : MonoBehaviour {
 	//scripts
 	public BuyButtonScript[] buyButtonScript;
 	public GameControlScript gameControlScript;
+	public TurretScript turretChild;
 	
 	void Start () 
 	{
@@ -20,6 +21,11 @@ public class TurretSpawnScript : MonoBehaviour {
 
 		for (int i = 0; i < turretSpawner.Length; ++i )
 			buyButtonScript[i] = turretSpawner[i].GetComponent<BuyButtonScript>();
+	}
+
+	void Update ()
+	{
+
 	}
 
 	//when the mouse is on this object and clicked, it is assigned as the spawnpoint for buybuttons
@@ -34,6 +40,13 @@ public class TurretSpawnScript : MonoBehaviour {
 				buyButton.SetActive(true);
 				gameControlScript.pointSelected = true;
 				GetComponent<SpriteRenderer>().color = Color.gray;
+			}
+
+			else if(gameControlScript.pointSelected == true)
+			{
+				buyButton.SetActive(false);
+				gameControlScript.pointSelected = false;
+				GetComponent<SpriteRenderer>().color = Color.white;
 			}
 		}
 	}
