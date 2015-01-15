@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\EnemySpawnScript.cs" />
      <Compile Include="Assets\Scripts\FactoryScript.cs" />
      <Compile Include="Assets\Scripts\GameControlScript.cs" />
+     <Compile Include="Assets\Scripts\PopupScript.cs" />
      <Compile Include="Assets\Scripts\TurretScript.cs" />
      <Compile Include="Assets\Scripts\TurretSpawnScript.cs" />
  <Reference Include="UnityEngine.UI">

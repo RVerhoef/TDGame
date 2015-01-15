@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class FactoryScript : MonoBehaviour {
 
 	//floats
@@ -14,5 +13,10 @@ public class FactoryScript : MonoBehaviour {
 			lives -= 1;
 			Destroy(obj.gameObject);
 		}
+	}
+
+	void onMouseOver()
+	{
+
 	}
 }

@@ -31,7 +31,7 @@ public class TurretSpawnScript : MonoBehaviour {
 	//when the mouse is on this object and clicked, it is assigned as the spawnpoint for buybuttons
 	void OnMouseOver () 
 	{
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButtonDown(0) && gameControlScript.spawningAllowed == true)
 		{
 			if(gameObject.tag == "SpawnPoint" && gameControlScript.pointSelected == false)
 			{
