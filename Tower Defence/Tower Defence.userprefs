@@ -1,12 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameControlScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UpgradeScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\FactoryScript.cs" Line="21" Column="2" />
-      <File FileName="Assets\Scripts\GameControlScript.cs" Line="78" Column="2" />
-      <File FileName="Assets\Scripts\TurretSpawnScript.cs" Line="34" Column="78" />
-      <File FileName="Assets\Scripts\PopupScript.cs" Line="20" Column="44" />
-      <File FileName="Assets\Scripts\BuyButtonScript.cs" Line="25" Column="3" />
+      <File FileName="Assets\Scripts\GameControlScript.cs" Line="73" Column="300" />
+      <File FileName="Assets\Scripts\BuyButtonScript.cs" Line="38" Column="67" />
+      <File FileName="Assets\Scripts\TurretScript.cs" Line="26" Column="8" />
+      <File FileName="Assets\Scripts\EnemyScript.cs" Line="12" Column="11" />
+      <File FileName="Assets\Scripts\BulletScript.cs" Line="15" Column="157" />
+      <File FileName="Assets\Scripts\UpgradeScript.cs" Line="43" Column="62" />
+      <File FileName="Assets\Scripts\FactoryScript.cs" Line="39" Column="88" />
+      <File FileName="Assets\Scripts\TurretSpawnScript.cs" Line="40" Column="158" />
+      <File FileName="Assets\Scripts\PopupScript.cs" Line="18" Column="63" />
+      <File FileName="Assets\Scripts\EnemySpawnScript.cs" Line="30" Column="142" />
+      <File FileName="Assets\Scripts\GameOverButton.cs" Line="6" Column="27" />
+      <File FileName="Assets\Scripts\StartButton.cs" Line="6" Column="18" />
+      <File FileName="Assets\Scripts\BorderScript.cs" Line="6" Column="76" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

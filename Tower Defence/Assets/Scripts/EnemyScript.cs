@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour {
 	//transforms
 	public Transform factory;
 
-	//
+	//scripts
 	public GameControlScript gameControlScript;
 
 	//floats
@@ -28,11 +28,11 @@ public class EnemyScript : MonoBehaviour {
 		//finds the target that the enemy will move towards
 		factory = GameObject.FindGameObjectWithTag("Factory").transform;
 
-		//
-		health = health * gameControlScript.currentWave;
+		//health of the enemy gets higher as the waves gets higher
+		health = health * gameControlScript.currentWave /2;
 
-		//
-		speed = speed * gameControlScript.currentWave;
+		//speed of the enemy gets higher if the waves get higher
+		speed = speed * gameControlScript.currentWave /2;
 	}
 
 	void Update () 
@@ -46,7 +46,7 @@ public class EnemyScript : MonoBehaviour {
 		//the enemy is destroyed if its health reaches below 1, and the points are added to the GameControl object
 		if (health < 1)
 		{
-
+			pointValue = gameControlScript.totalLives / 10;
 			gameControlScript.points += pointValue;
 			Destroy(this.gameObject);
 		}

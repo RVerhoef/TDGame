@@ -19,13 +19,9 @@ public class TurretSpawnScript : MonoBehaviour {
 		gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
 		buyButtonScript = new BuyButtonScript[turretSpawner.Length];
 
-		for (int i = 0; i < turretSpawner.Length; ++i )
+		//gets all the buybuttonscripts, they are used to assign the spawnpoint of the turret that is bought
+		for (int i = 0; i < turretSpawner.Length; ++i)
 			buyButtonScript[i] = turretSpawner[i].GetComponent<BuyButtonScript>();
-	}
-
-	void Update ()
-	{
-
 	}
 
 	//when the mouse is on this object and clicked, it is assigned as the spawnpoint for buybuttons
@@ -35,13 +31,13 @@ public class TurretSpawnScript : MonoBehaviour {
 		{
 			if(gameObject.tag == "SpawnPoint" && gameControlScript.pointSelected == false)
 			{
-				for (int i = 0; i < turretSpawner.Length; ++i )
+				for (int i = 0; i < turretSpawner.Length; ++i)
 				buyButtonScript[i].spawnPoint = gameObject;
 				buyButton.SetActive(true);
 				gameControlScript.pointSelected = true;
 				GetComponent<SpriteRenderer>().color = Color.gray;
 			}
-
+			//if the player already selected this object, the highlighting is removed as well as the buy menu, and it is no longer the target for spawning new turrets 
 			else if(gameControlScript.pointSelected == true)
 			{
 				buyButton.SetActive(false);

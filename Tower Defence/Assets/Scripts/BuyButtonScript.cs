@@ -19,7 +19,7 @@ public class BuyButtonScript : MonoBehaviour {
 	//floats
 	public float cost;
 
-	//the spawnturret function is called when a button is pressed, the function instantiates a turret as a child of the clicked spawnpoint
+	//the spawnturret function is called when a button is pressed, the function instantiates a turret as a child of the clicked spawnpoint if the player has enough points, plays sounds and puts the highlighting to off
 	public void SpawnTurret () 
 	{
 		gameControlScript = GameObject.Find("GameControl").GetComponent<GameControlScript>();
@@ -35,6 +35,7 @@ public class BuyButtonScript : MonoBehaviour {
 			spawnPoint.GetComponent<SpriteRenderer>().color = Color.white;
 			gameControlScript.pointSelected = false;
 		}
+		//if the player doesnt have enough points a sound will be played
 		else
 		{
 			audio.PlayOneShot(cantBuy);

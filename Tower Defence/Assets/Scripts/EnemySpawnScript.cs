@@ -27,7 +27,7 @@ public class EnemySpawnScript : MonoBehaviour {
 
 	void Spawn ()
 	{
-		//spawns the enemy at the position of this gameobject if spawning is allowed
+		//spawns the enemy at the position of this gameobject if spawning is allowed, used the spawnenemy value to choose which enemy type to spawn
 		if (gameControlScript.spawningAllowed == true && gameControlScript.totalMaxSpawns > 0) 
 		{
 			if(gameControlScript.spawnEnemy == 0)
